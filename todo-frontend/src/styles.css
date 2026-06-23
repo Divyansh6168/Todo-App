@@ -1,0 +1,194 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  min-height: 100vh;
+}
+
+/* Main App */
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+/* Todo Container */
+.todo-container {
+  width: 100%;
+  max-width: 700px;
+}
+
+.todo-container h1 {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Form */
+form {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+/* Input */
+form input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 15px 0 0 15px;
+  background: white;
+}
+
+/* Add Button */
+form button {
+  border: none;
+  padding: 16px 30px;
+  background: #2563eb;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #1d4ed8;
+}
+
+/* Todo List */
+ul {
+  list-style: none;
+}
+
+/* Todo Card */
+li {
+  background: rgba(255,255,255,0.95);
+  margin-bottom: 18px;
+  padding: 22px;
+  border-radius: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Todo Text */
+.todo-text {
+  font-size: 24px;
+  color: #111827;
+  word-break: break-word;
+  flex: 1;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+.delete-btn:active {
+  transform: scale(0.95);
+}
+
+/* Success Message */
+.success-msg {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+
+    background: #22c55e;
+    color: white;
+
+    padding: 14px 22px;
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+
+    z-index: 1000;
+
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.message-container {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  form input,
+  form button {
+    width: 100%;
+    border-radius: 12px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .delete-btn {
+    width: 100%;
+  }
+}
